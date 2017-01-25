@@ -5,19 +5,22 @@
  * http://olegkukharuk.com
  */
 
-// TODO: Add loading of background images
-
 function progressiveLoader () {
 	var items = document.getElementsByClassName('progressiveLoader'),
 		  itemsCount = items.length,
 		  itemsLoaded = 0;
 	if (itemsCount > 0) {
 		function load ( i ) {
-			var element = items[ i ];
+			var element = items[ i ],
+				  imageUrl = element.getAttribute('data-original');
 			var image = new Image();
-				  image.src = element.getAttribute('data-original');
+				  image.src = imageUrl;
 			image.onload = function () {
-				element.src = element.getAttribute('data-original');
+				if (element.getAttribute('src') == null) {
+					element.style.backgroundImage = 'url(' + imageUrl + ')';
+				} else {
+					element.src = imageUrl;
+				}
 				itemsLoaded++;
 				if (itemsCount !== itemsLoaded) {
 					load ( itemsLoaded );

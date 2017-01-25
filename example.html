@@ -4,6 +4,13 @@
     <title>ProgressiveLoaderJS</title>
     <meta charset="utf-8">
     <style>
+        .backgroundImage {
+            background-size: cover;
+            display: block;
+            height: 200px;
+            margin-bottom: -50px;
+            width: 100%;
+        }
         img {
             display: inline-block;
             height: 100px;
@@ -13,8 +20,12 @@
 </head>
 <body>
 
+<div class="backgroundImage progressiveLoader"
+        style="background-image: url(https://images.pexels.com/photos/254770/pexels-photo-254770.jpeg?h=350&auto=compress&cs=tinysrgb);"
+        data-original="https://www.apple.com/v/imac-with-retina/a/images/overview/5k_image.jpg?number=010"></div>
+
     <img src="https://images.pexels.com/photos/254770/pexels-photo-254770.jpeg?h=350&auto=compress&cs=tinysrgb"
-              data-original="https://www.apple.com/v/imac-with-retina/a/images/overview/5k_image.jpg?number=001"
+              data-original="https://www.apple.com/v/imac-with-retina/a/images/overview/5k_image.jpg?number=0010"
               class="progressiveLoader">
     <img src="https://images.pexels.com/photos/254770/pexels-photo-254770.jpeg?h=350&auto=compress&cs=tinysrgb"
              data-original="https://www.apple.com/v/imac-with-retina/a/images/overview/5k_image.jpg?number=002"
